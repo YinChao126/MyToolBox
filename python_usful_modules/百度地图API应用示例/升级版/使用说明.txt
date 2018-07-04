@@ -1,0 +1,8 @@
+时间：20180704
+
+核心在于修改GetData，从PathFinder06.txt中获取经纬度和snr
+
+baidu_map.py基本上不用动
+
+result.html基本上不用动（会自动替换数据）
+可能要修改默认打开的定位点，和之后maxValue（以使得和snr匹配上）
