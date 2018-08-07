@@ -1,0 +1,46 @@
+pcre在Windows环境下的使用方法
+作者：尹超
+日期：2018-5-31
+
+使用思路：
+1. 把pcre.dll集成到工程中，并进行相应配置
+2. 编写正确的pattern
+3. 利用 pcre_compile 函数对pattern进行编译，形成obj
+4. 利用 pcre_exec 对待搜索的内容进行obj匹配，观测返回值
+5. 如果 pcre_exec返回>0, 则认为匹配上了
+
+详细步骤（假设目标工程名为Example）
+1. Example工程的debug目录下添加pcre.dll
+2. Example工程源码目录下添加pcre.lib和pcre.h
+3. Example工程配置：配置属性 -> 连接器 -> 输入 -> 附加依赖项 -> 增加：pcre.lib
+4. App源码中 #include "pcre.h"
+至此，已经完成了pcre模块在工程内的集成工作，剩下的工作就是愉快地coding啦...
+
+附示例代码：
+
+#include "pcre.h"
+
+#define OVECCOUNT 30    /* should be a multiple of 3 */
+
+int main()
+{
+  ...... //
+  	// regular expression filter...
+  char *search_str = "M4_D2_12.0dB.bin"; //测试输入字符串
+	char *re_pattern = "M4_D2_[0-9]+.0dB.bin"; //正则表达式
+	printf("pattern = %s\n", re_pattern);
+	printf("filter result\n");
+	pcre *cstr;
+	int erroroffset;
+	int num;
+	const char * error;
+	char result[30];
+	int ovector[OVECCOUNT];
+	cstr = pcre_compile(re_pattern, 0, &error, &erroroffset, NULL);
+  num = pcre_exec(cstr, NULL, search_str, strlen(search_str), 0, 0, ovector, (10) * 3);
+  if (num > 0)
+  {
+    printf("%s\n", search_str);
+  }
+}
+
