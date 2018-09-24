@@ -54,6 +54,10 @@ static char GetValueFromStr(const char *SrcStr, const char *StrFind, const char 
 		{
 			SignFlag = 1;
 		}
+		if (*p == 0)
+		{
+      break;
+		}
 		Buff[i] = *p;
 		i++;
 		p++;

@@ -5,3 +5,8 @@
 能够随意读取并解析配置文件信息的函数。
 注意：一定要#include <stdlib.h>否则会出bug
  原型：char GetValueFromStr(const char *SrcStr, const char *StrFind, const char separator, void *RetValue)
+ 
+ bug修复：
+ GetValueFromStr函数中存在一个问题，如果最后一个参数没有空行（找不到\n标识符），会出错
+ 
+ 现在的源码里已经修复。但是示例程序没有修复！！！
