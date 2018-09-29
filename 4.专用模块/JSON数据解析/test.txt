@@ -1,0 +1,22 @@
+{
+	"mode":"4",
+	"freq":"98.0",
+	"tx_gain":"80",
+	"ad_gain":"1",
+	"service":
+	[
+		{"ServiceId":"0", "FormCode":"0", "LdpcNum":"16", "LdpcRate":"2", "IntvSize":"8", "QamType":"0"},
+		{"ServiceId":"1", "FormCode":"32", "LdpcNum":"16", "LdpcRate":"4", "IntvSize":"7", "QamType":"0"},
+		{"ServiceId":"2", "FormCode":"33", "LdpcNum":"16", "LdpcRate":"3", "IntvSize":"8", "QamType":"0"},
+		{"ServiceId":"3", "FormCode":"0", "LdpcNum":"0", "LdpcRate":"0", "IntvSize":"0", "QamType":"0"},
+		{"ServiceId":"4", "FormCode":"0", "LdpcNum":"0", "LdpcRate":"0", "IntvSize":"0", "QamType":"1"},
+		{"ServiceId":"5", "FormCode":"8", "LdpcNum":"0", "LdpcRate":"0", "IntvSize":"0", "QamType":"1"},
+		{"ServiceId":"6", "FormCode":"0", "LdpcNum":"0", "LdpcRate":"0", "IntvSize":"0", "QamType":"1"},
+		{"ServiceId":"7", "FormCode":"100", "LdpcNum":"0", "LdpcRate":"0", "IntvSize":"0", "QamType":"1"}
+	],
+	"test":
+	{
+		"para1":"1001",
+		"para2":"007"
+	}
+}
